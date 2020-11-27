@@ -1,0 +1,42 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Productos</h3>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                    <div class="m-sm-4">
+                        <div class="text-center">
+                            <img src="../../../assets/img/MAXIENTREGAS.JPG" alt="Linda Miller" class="img-fluid rounded-circle" width="132" height="132" />
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form action=""  >
+                <div class="form-group">
+                    <label for="id">id</label>
+                    <input type="text" class="form-control" name="id" id="id"  [(ngModel)]="producto.idProducto">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre"  [(ngModel)]="producto.nombreProducto">
+                </div>
+                <div class="form-group">
+                    <label for="dimensiones">Dimensiones</label>
+                    <input type="text" class="form-control" name="dimensiones" id="dimensiones" [(ngModel)]="producto.dimensiones">
+                </div>
+                <div class="form-group">
+                    <label for="unidad">Unidad de empaque</label>
+                    <input type="text" class="form-control" name="unidad" id="unidad" [(ngModel)]="producto.unidadEmpaque">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="text" class="form-control" name="precio" id="precio" [(ngModel)]="producto.precio">
+                </div>
+                <button class="btn btn-danger" (click)="guardar()">Guardar</button>
+              <button class="btn-github" (click)="regresar()">Regresar</button>
+            </form>
+        </div>
+    </div>
+</div>
