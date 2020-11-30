@@ -16,47 +16,47 @@
       <form action=""  >
         <div class="form-group">
           <label for="id">id: </label>
-          <label class="text-lg-right" id="id" name="id">{{proveedor.id}} </label>
+          <s class="text-lg-right" id="id" name="id">{{proveedor.idProveedor}} </s>
         </div>
         <div class="form-group">
           <label for="NIT">NIT</label>
-          <input type="text" class="form-control" name="NiT" id="NIT"  [(ngModel)]="proveedor.nit">
+          <input type="text" class="form-control" name="NiT" id="NIT" value="{{proveedor.nit}}" >
         </div>
         <div class="form-group">
           <label for="razonSocial">Razon Social</label>
-          <input type="text" class="form-control" name="razonSocial" id="razonSocial" [(ngModel)]="proveedor.razonSocial">
+          <input type="text" class="form-control" name="razonSocial" id="razonSocial" value="{{proveedor.razonSocial}}">
         </div>
         <div class="form-group">
           <label for="direccion">Direccion</label>
-          <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="proveedor.direccion">
+          <input type="text" class="form-control" name="direccion" id="direccion" value="{{proveedor.direccion}}">
         </div>
         <div class="form-group">
           <label for="emailContacto">Email Contacto</label>
-          <input type="text" class="form-control" name="emailContacto" id="emailContacto" [(ngModel)]="proveedor.emailContacto">
+          <input type="text" class="form-control" name="emailContacto" id="emailContacto" value="{{proveedor.emailContacto}}">
         </div>
         <div class="form-group">
           <label for="celular">celular</label>
-          <input type="text" class="form-control" name="celular" id="celular" [(ngModel)]="proveedor.celular">
+          <input type="text" class="form-control" name="celular" id="celular" value="{{proveedor.celular}}">
         </div>
         <div class="form-group">
           <label for="nombreContacto">Nombre Contacto</label>
-          <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" [(ngModel)]="proveedor.nombreContacto">
+          <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="{{proveedor.nombreContacto}}">
         </div>
         <div class="form-group">
           <label for="nroDocContacto">Nro. Doc. Contacto</label>
-          <input type="text" class="form-control" name="nroDocContacto" id="nroDocContacto" [(ngModel)]="proveedor.nroDocContacto">
+          <input type="text" class="form-control" name="nroDocContacto" id="nroDocContacto" value="{{proveedor.nroDocContacto}}">
         </div>
         <div class="form-group">
           <label for="tipoDocContacto">Tipo Doc. Contacto</label>
-          <input type="text" class="form-control" name="tipoDocContacto" id="tipoDocContacto" [(ngModel)]="proveedor.tipoDocContacto">
+          <input type="text" class="form-control" name="tipoDocContacto" id="tipoDocContacto" value="{{proveedor.tipoDocContacto}}">
         </div>
         <div class="form-group">
           <label for="telefonoFijo">Telefono Fijo</label>
-          <input type="text" class="form-control" name="telefonoFijo" id="telefonoFijo" [(ngModel)]="proveedor.telefonoFijo">
+          <input type="text" class="form-control" name="telefonoFijo" id="telefonoFijo" value="{{proveedor.telefonoFijo}}">
         </div>
         <div class="form-group">
           <label for="estado">Estado</label>
-          <input type="text" class="form-control" name="estado" id="estado" [(ngModel)]="proveedor.estado">
+          <input type="text" class="form-control" name="estado" id="estado" value="{{proveedor.estado}}">
         </div>
         <button class="btn btn-danger" (click)="edit(proveedor)">Guardar Cambios</button>
         <button class="btn-github" (click)="regresar()">Regresar</button>

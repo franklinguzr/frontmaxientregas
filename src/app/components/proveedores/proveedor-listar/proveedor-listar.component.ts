@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Proveedor} from '../../../models/proveedor';
 import {ProveedorService} from '../../../services/proveedor.service';
 import {Router, RouterModule} from '@angular/router';
@@ -13,12 +13,17 @@ import {Producto} from '../../../models/producto';
 export class ProveedorListarComponent implements OnInit {
 
   proveedores: Proveedor[];
+  proveedor: Proveedor;
   constructor(private service: ProveedorService, private router: Router) { }
 
   ngOnInit(): void {
+    this.service.getProveedor().subscribe(data => {
+      this.proveedores = data;
+    });
   }
   editar(proveedor: Proveedor){
-    localStorage.setItem('id', proveedor.id.toString());
+    this.service.proveedor = proveedor;
+    localStorage.setItem('id', proveedor.idProveedor.toString());
     this.router.navigate(['editarProveedor']);
   }
   eliminar(proveedor: Proveedor){

@@ -15,11 +15,13 @@ export class ProductoListarComponent implements OnInit {
   constructor(private service: ProductoService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getProducto().subscribe(data => {this.productos = data; });
+    this.service.getProducto().subscribe(data => {
+      this.productos = data;
+    });
   }
 
   editar(producto: Producto) {
-    localStorage.setItem('id', producto.idProducto.toString());
+    this.service.producto = producto;
     this.router.navigate(['editarProductos']);
   }
     eliminar(producto: Producto){

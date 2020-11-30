@@ -31,7 +31,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let proveedor of proveedores" class="text-center">
-          <td>{{proveedor.id}}</td>
+          <td>{{proveedor.idProveedor}}</td>
           <td>{{proveedor.razonSocial}}</td>
           <td>{{proveedor.nit}}</td>
           <td>{{proveedor.nombreContacto}}</td>
@@ -44,7 +44,7 @@
           <td>{{proveedor.estado}}</td>
           <td>
             <button class="btn btn-warning" (click)="editar(proveedor)" >Editar</button>
-            <button class="btn btn-danger" style="margin-left: 10px; " (click)="eliminar(proveedor)">Eliminar</button>
+            <button class="btn btn-danger" style="margin-left: 10px; " (click)="eliminar(proveedor)" >Eliminar </button>
           </td>
         </tr>
         </tbody>

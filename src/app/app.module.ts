@@ -15,8 +15,7 @@ import { ProveedorIndexComponent } from './components/proveedores/proveedor-inde
 import { ProveedorListarComponent } from './components/proveedores/proveedor-listar/proveedor-listar.component';
 import { ProveedorAgregarComponent } from './components/proveedores/proveedor-agregar/proveedor-agregar.component';
 import { ProveedorEditarComponent } from './components/proveedores/proveedor-editar/proveedor-editar.component';
-
-
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -37,6 +36,7 @@ import { ProveedorEditarComponent } from './components/proveedores/proveedor-edi
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     routing
   ],
   providers: [ProductoService],

@@ -1,7 +1,7 @@
 export class Producto{
   idProducto: number;
   nombreProducto: string;
-  dimensiones: number;
+  dimensiones: string;
   unidadEmpaque: string;
   precio: number;
 }
