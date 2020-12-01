@@ -13,52 +13,56 @@
       </div>
     </div>
     <div class="card-body">
-      <form action=""  >
+      <form action="" [formGroup]="proveedorForm" >
         <div class="form-group">
-          <label for="id">id</label>
-          <input type="text" class="form-control" name="id" id="id"  [(ngModel)]="proveedor.id">
+          <input type="hidden" class="form-control" name="id" id="id" formControlName="idProveedor">
         </div>
         <div class="form-group">
           <label for="NIT">NIT</label>
-          <input type="text" class="form-control" name="NiT" id="NIT"  [(ngModel)]="proveedor.nit">
+          <input type="text" class="form-control" name="NiT" id="NIT"  formControlName="nit">
         </div>
         <div class="form-group">
           <label for="razonSocial">Razon Social</label>
-          <input type="text" class="form-control" name="razonSocial" id="razonSocial" [(ngModel)]="proveedor.razonSocial">
+          <input type="text" class="form-control" name="razonSocial" id="razonSocial" formControlName="razonSocial">
         </div>
         <div class="form-group">
           <label for="direccion">Direccion</label>
-          <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="proveedor.direccion">
+          <input type="text" class="form-control" name="direccion" id="direccion" formControlName="direccion">
         </div>
         <div class="form-group">
           <label for="emailContacto">Email Contacto</label>
-          <input type="text" class="form-control" name="emailContacto" id="emailContacto" [(ngModel)]="proveedor.emailContacto">
+          <input type="text" class="form-control" name="emailContacto" id="emailContacto" formControlName="emailContacto">
         </div>
         <div class="form-group">
           <label for="celular">celular</label>
-          <input type="text" class="form-control" name="celular" id="celular" [(ngModel)]="proveedor.celular">
+          <input type="text" class="form-control" name="celular" id="celular" formControlName="celular">
         </div>
         <div class="form-group">
           <label for="nombreContacto">Nombre Contacto</label>
-          <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" [(ngModel)]="proveedor.nombreContacto">
+          <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" formControlName="nombreContacto">
         </div>
         <div class="form-group">
           <label for="nroDocContacto">Nro. Doc. Contacto</label>
-          <input type="text" class="form-control" name="nroDocContacto" id="nroDocContacto" [(ngModel)]="proveedor.nroDocContacto">
+          <input type="text" class="form-control" name="nroDocContacto" id="nroDocContacto" formControlName="nroDocContacto">
         </div>
         <div class="form-group">
           <label for="tipoDocContacto">Tipo Doc. Contacto</label>
-          <input type="text" class="form-control" name="tipoDocContacto" id="tipoDocContacto" [(ngModel)]="proveedor.tipoDocContacto">
+          <input type="text" class="form-control" name="tipoDocContacto" id="tipoDocContacto" formControlName="tipoDocContacto">
         </div>
         <div class="form-group">
           <label for="telefonoFijo">Telefono Fijo</label>
-          <input type="text" class="form-control" name="telefonoFijo" id="telefonoFijo" [(ngModel)]="proveedor.telefonoFijo">
+          <input type="text" class="form-control" name="telefonoFijo" id="telefonoFijo" formControlName="telefonoFijo">
         </div>
         <div class="form-group">
-          <label for="estado">Estado</label>
-          <input type="text" class="form-control" name="estado" id="estado" [(ngModel)]="proveedor.estado">
+          <label for="estado">Estado:</label>
+          <p>
+            <label>
+              <input type="checkbox"  checked="checked" formControlName="estado"name="estado" id="estado"/>
+              <span>Activo</span>
+            </label>
+          </p>
         </div>
-        <button class="btn btn-danger" (click)="guardar()">Guardar</button>
+        <button class="btn btn-warning" (click)="guardar(proveedorForm.value)" >Guardar</button>
         <button class="btn-github" (click)="regresar()">Regresar</button>
       </form>
     </div>

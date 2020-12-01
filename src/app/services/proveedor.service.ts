@@ -8,28 +8,29 @@ import {Producto} from '../models/producto';
 })
 export class ProveedorService {
 
-  private urlProveedor = 'http://localhost:8080/proveedor';
-
+  private urlProveedor = '/api/proveedor/';
+  public proveedor: Proveedor;
   // tslint:disable-next-line:variable-name
   constructor(private _http: HttpClient) {
 
   }
   getProveedor(){
-    return this._http.get<Proveedor[]>(this.urlProveedor);
+    return this._http.get<Proveedor[]>(this.urlProveedor + 'List');
   }
 
   createProveedor(proveedor: Proveedor){
-    return this._http.post<Proveedor>(this.urlProveedor, proveedor);
+    return this._http.post<Proveedor>(this.urlProveedor + 'Insert/' , proveedor);
   }
 
   editProveedor(proveedor: Proveedor){
-    return this._http.put<Proveedor>(this.urlProveedor + '/' + proveedor.id, proveedor);
+    return this._http.put<Proveedor>(this.urlProveedor + 'update', proveedor);
   }
 
   getProveedorId(id: number){
-    return this._http.get<Proveedor>(this.urlProveedor + '/' + id);
+    return this._http.get<Proveedor>(this.urlProveedor + 'findById/' + id);
   }
   delete(proveedor: Proveedor){
-    return this._http.delete<Producto>(this.urlProveedor + '/' + proveedor.id);
+    // @ts-ignore
+    return this._http.delete<Producto>(this.urlProveedor + 'delete/', proveedor);
   }
 }

@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-producto-editar',
@@ -11,23 +13,42 @@ import { ProductoService } from 'src/app/services/producto.service';
 export class ProductoEditarComponent implements OnInit {
 
   producto: Producto;
+  productoForm = new FormGroup({
+    idProducto: new FormControl(),
+    nombreProducto: new FormControl(),
+    dimensiones: new FormControl(),
+    unidadEmpaque: new FormControl(),
+    precio: new FormControl()
+  });
   constructor(private router: Router,  private service: ProductoService) { }
 
   ngOnInit(): void {
     this.getProducto();
+    this.productoForm.setValue({
+      idProducto: this.producto.idProducto,
+      nombreProducto: this.producto.nombreProducto,
+      dimensiones: this.producto.dimensiones,
+      unidadEmpaque: this.producto.unidadEmpaque,
+      precio: this.producto.precio,
+    });
   }
 
 
   getProducto(){
+    // mientras se arregla el getById en el back
+    this.producto = this.service.productoProv;
+    /*
     const id = localStorage.getItem('id');
     this.service.getProductoId(+id).subscribe (data => {
       this.producto = data;
     });
+    */
   }
   regresar(): void{
-    this.router.navigate(['productos']);
+    this.router.navigate(['listarProductos']);
   }
   edit(producto: Producto){
+    console.log(producto);
     this.service.editProducto(producto).subscribe(data => {
       this.producto = data;
       alert('se actualizo correctamente');

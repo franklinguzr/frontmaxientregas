@@ -5,33 +5,30 @@ import { Producto } from '../models/producto';
   providedIn: 'root'
 })
 export class ProductoService {
-  public producto;
-  public token;
-  public identity;
-  private urlProductos: 'http://localhost:8080/producto';
-
+  private urlProductos = '/api/producto/';
+  public productoProv: Producto;
   // tslint:disable-next-line:variable-name
   constructor(private _http: HttpClient) {
   }
 
   getProducto(){
-    return this._http.get<Producto[]>(this.urlProductos);
+    return this._http.get<Producto[]>(this.urlProductos + `list`);
   }
 
   createProducto(producto: Producto){
-    return this._http.post<Producto>(this.urlProductos, producto);
+    return this._http.post<Producto>(this.urlProductos + 'Insert', producto);
   }
 
   editProducto(producto: Producto){
-    return this._http.put<Producto>(this.urlProductos + '/' + producto.idProducto, producto);
+    return this._http.put<Producto>(this.urlProductos + 'update' , producto);
   }
 
   getProductoId(id: number){
-    return this._http.get<Producto>(this.urlProductos + '/' + id);
+    return this._http.get<Producto>(this.urlProductos + 'findById/' + id);
   }
 
   delete(producto: Producto){
-   return this._http.delete<Producto>(this.urlProductos + '/' + producto.idProducto);
+   return this._http.delete<Producto>(this.urlProductos + 'delete/' + producto);
   }
 
 }
