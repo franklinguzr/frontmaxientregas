@@ -13,52 +13,52 @@
       </div>
     </div>
     <div class="card-body">
-      <form action=""  >
+      <form action=""  [formGroup]="proveedorForm">
         <div class="form-group">
           <label for="id">id: </label>
-          <s class="text-lg-right" id="id" name="id">{{proveedor.idProveedor}} </s>
+          <label class="text-lg-right" id="id" name="id">{{proveedor.idProveedor}} </label>
         </div>
         <div class="form-group">
           <label for="NIT">NIT</label>
-          <input type="text" class="form-control" name="NiT" id="NIT" value="{{proveedor.nit}}" >
+          <input type="text" class="form-control" name="NiT" id="NIT"  formControlName="nit">
         </div>
         <div class="form-group">
           <label for="razonSocial">Razon Social</label>
-          <input type="text" class="form-control" name="razonSocial" id="razonSocial" value="{{proveedor.razonSocial}}">
+          <input type="text" class="form-control" name="razonSocial" id="razonSocial" formControlName="razonSocial">
         </div>
         <div class="form-group">
           <label for="direccion">Direccion</label>
-          <input type="text" class="form-control" name="direccion" id="direccion" value="{{proveedor.direccion}}">
+          <input type="text" class="form-control" name="direccion" id="direccion" formControlName="emailContacto">
         </div>
         <div class="form-group">
           <label for="emailContacto">Email Contacto</label>
-          <input type="text" class="form-control" name="emailContacto" id="emailContacto" value="{{proveedor.emailContacto}}">
+          <input type="text" class="form-control" name="emailContacto" id="emailContacto" formControlName="emailContacto">
         </div>
         <div class="form-group">
           <label for="celular">celular</label>
-          <input type="text" class="form-control" name="celular" id="celular" value="{{proveedor.celular}}">
+          <input type="text" class="form-control" name="celular" id="celular"  formControlName="celular">
         </div>
         <div class="form-group">
           <label for="nombreContacto">Nombre Contacto</label>
-          <input type="text" class="form-control" name="nombreContacto" id="nombreContacto" value="{{proveedor.nombreContacto}}">
+          <input type="text" class="form-control" name="nombreContacto" id="nombreContacto"formControlName="nombreContacto">
         </div>
         <div class="form-group">
           <label for="nroDocContacto">Nro. Doc. Contacto</label>
-          <input type="text" class="form-control" name="nroDocContacto" id="nroDocContacto" value="{{proveedor.nroDocContacto}}">
+          <input type="text" class="form-control" name="nroDocContacto" id="nroDocContacto"  formControlName="nroDocContacto">
         </div>
         <div class="form-group">
           <label for="tipoDocContacto">Tipo Doc. Contacto</label>
-          <input type="text" class="form-control" name="tipoDocContacto" id="tipoDocContacto" value="{{proveedor.tipoDocContacto}}">
+          <input type="text" class="form-control" name="tipoDocContacto" id="tipoDocContacto"  formControlName="tipoDocContacto">
         </div>
         <div class="form-group">
           <label for="telefonoFijo">Telefono Fijo</label>
-          <input type="text" class="form-control" name="telefonoFijo" id="telefonoFijo" value="{{proveedor.telefonoFijo}}">
+          <input type="text" class="form-control" name="telefonoFijo" id="telefonoFijo"  formControlName="telefonoFijo">
         </div>
         <div class="form-group">
           <label for="estado">Estado</label>
-          <input type="text" class="form-control" name="estado" id="estado" value="{{proveedor.estado}}">
+          <input type="text" class="form-control" name="estado" id="estado" value="{{proveedor.estado}}" formControlName="estado">
         </div>
-        <button class="btn btn-danger" (click)="edit(proveedor)">Guardar Cambios</button>
+        <button class="btn btn-danger" (click)="edit(proveedorForm.value)">Guardar Cambios</button>
         <button class="btn-github" (click)="regresar()">Regresar</button>
       </form>
     </div>

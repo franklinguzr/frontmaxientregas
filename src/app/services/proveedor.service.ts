@@ -23,11 +23,11 @@ export class ProveedorService {
   }
 
   editProveedor(proveedor: Proveedor){
-    return this._http.put<Proveedor>(this.urlProveedor + '/' + proveedor.idProveedor, proveedor);
+    return this._http.put<Proveedor>(this.urlProveedor + 'update', proveedor);
   }
 
   getProveedorId(id: number){
-    return this._http.get<Proveedor>(this.urlProveedor + '/' + id);
+    return this._http.get<Proveedor>(this.urlProveedor + 'findById/' + id);
   }
   delete(proveedor: Proveedor){
     // @ts-ignore

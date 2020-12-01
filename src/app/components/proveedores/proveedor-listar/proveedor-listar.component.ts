@@ -22,9 +22,11 @@ export class ProveedorListarComponent implements OnInit {
     });
   }
   editar(proveedor: Proveedor){
+    console.log(proveedor);
     this.service.proveedor = proveedor;
-    localStorage.setItem('id', proveedor.idProveedor.toString());
+    // localStorage.setItem('id', proveedor.idProveedor.toString());
     this.router.navigate(['editarProveedor']);
+
   }
   eliminar(proveedor: Proveedor){
     this.service.delete(proveedor).subscribe(data => {

@@ -6,7 +6,7 @@ import { Producto } from '../models/producto';
 })
 export class ProductoService {
   private urlProductos = '/api/producto/';
-  public producto: Producto;
+  public productoProv: Producto;
   // tslint:disable-next-line:variable-name
   constructor(private _http: HttpClient) {
   }
@@ -20,7 +20,7 @@ export class ProductoService {
   }
 
   editProducto(producto: Producto){
-    return this._http.put<Producto>(this.urlProductos + '/' + producto.idProducto, producto);
+    return this._http.put<Producto>(this.urlProductos + 'update' , producto);
   }
 
   getProductoId(id: number){
@@ -28,7 +28,7 @@ export class ProductoService {
   }
 
   delete(producto: Producto){
-   return this._http.delete<Producto>(this.urlProductos + '/' + producto.idProducto);
+   return this._http.delete<Producto>(this.urlProductos + 'delete/' + producto);
   }
 
 }

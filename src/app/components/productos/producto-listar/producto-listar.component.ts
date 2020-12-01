@@ -21,7 +21,7 @@ export class ProductoListarComponent implements OnInit {
   }
 
   editar(producto: Producto) {
-    this.service.producto = producto;
+    this.service.productoProv = producto;
     this.router.navigate(['editarProductos']);
   }
     eliminar(producto: Producto){
