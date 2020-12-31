@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-producto-editar',
@@ -31,6 +31,11 @@ export class ProductoEditarComponent implements OnInit {
       unidadEmpaque: this.producto.unidadEmpaque,
       precio: this.producto.precio,
     });
+    this.productoForm.get('nombreProducto').setValidators([Validators.maxLength(45), Validators.required]);
+    this.productoForm.get('dimensiones').setValidators([ Validators.maxLength(20), Validators.required]);
+    this.productoForm.get('unidadEmpaque').setValidators([ Validators.maxLength(25), Validators.required]);
+    this.productoForm.get('precio').setValidators([Validators.required, Validators.pattern(/^[1-9]\d{1,15}$/)]);
+
   }
 
 

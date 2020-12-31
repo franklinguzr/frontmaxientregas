@@ -31,6 +31,6 @@ export class ProveedorService {
   }
   delete(proveedor: Proveedor){
     // @ts-ignore
-    return this._http.delete<Producto>(this.urlProveedor + 'delete/', proveedor);
+    return this._http.delete<Producto>(this.urlProveedor + 'delete/' + '?idproveedor=' + proveedor.idProveedor);
   }
 }

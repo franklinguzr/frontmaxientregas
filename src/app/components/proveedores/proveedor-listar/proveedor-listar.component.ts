@@ -22,7 +22,6 @@ export class ProveedorListarComponent implements OnInit {
     });
   }
   editar(proveedor: Proveedor){
-    console.log(proveedor);
     this.service.proveedor = proveedor;
     // localStorage.setItem('id', proveedor.idProveedor.toString());
     this.router.navigate(['editarProveedor']);
@@ -35,5 +34,12 @@ export class ProveedorListarComponent implements OnInit {
   }
   regresar(): void{
     this.router.navigate(['proveedor']);
+  }
+  estado(estado: boolean): string{
+    if (estado){
+      return 'Activo';
+    } else{
+      return 'Desactivado';
+    }
   }
 }

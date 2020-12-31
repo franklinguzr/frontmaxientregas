@@ -16,6 +16,14 @@ import { ProveedorListarComponent } from './components/proveedores/proveedor-lis
 import { ProveedorAgregarComponent } from './components/proveedores/proveedor-agregar/proveedor-agregar.component';
 import { ProveedorEditarComponent } from './components/proveedores/proveedor-editar/proveedor-editar.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ZonasIndexComponent } from './components/zonas/zonas-index/zonas-index.component';
+import { DomiciliariosIndexComponent } from './components/domiciliarios/domiciliarios-index/domiciliarios-index.component';
+import { DomiciliariosListarComponent } from './components/domiciliarios/domiciliarios-listar/domiciliarios-listar.component';
+import { DomiciliarioAgregarComponent } from './components/domiciliarios/domiciliario-agregar/domiciliario-agregar.component';
+import { DomiciliarioEditarComponent } from './components/domiciliarios/domiciliario-editar/domiciliario-editar.component';
+import { ZonasListarComponent } from './components/zonas/zonas-listar/zonas-listar.component';
+import { ZonasAgregarComponent } from './components/zonas/zonas-agregar/zonas-agregar.component';
+import { ZonasEditarComponent } from './components/zonas/zonas-editar/zonas-editar.component';
 
 
 @NgModule({
@@ -30,6 +38,14 @@ import {ReactiveFormsModule} from '@angular/forms';
     ProveedorListarComponent,
     ProveedorAgregarComponent,
     ProveedorEditarComponent,
+    ZonasIndexComponent,
+    DomiciliariosIndexComponent,
+    DomiciliariosListarComponent,
+    DomiciliarioAgregarComponent,
+    DomiciliarioEditarComponent,
+    ZonasListarComponent,
+    ZonasAgregarComponent,
+    ZonasEditarComponent,
   ],
   imports: [
     BrowserModule,
