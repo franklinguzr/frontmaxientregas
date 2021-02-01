@@ -16,7 +16,6 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Nombre</th>
                         <th>Dimensiones</th>
                         <th>Unidad de empaque</th>
@@ -26,13 +25,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let producto of productos" class="text-center">
-                        <td>{{producto.idProducto}}</td>
                         <td>{{producto.nombreProducto}}</td>
                         <td>{{producto.dimensiones}}</td>
                         <td>{{producto.unidadEmpaque}}</td>
                         <td>{{producto.precio}}</td>
                         <td>
-                            <button class="btn btn-warning" (click)="editar(producto)" >Editar</button>
+                            <button class="btn btn-warning" style="margin-left: 10px;" (click)="editar(producto)" >Editar</button>
                             <button class="btn btn-danger" style="margin-left: 10px;" (click)="eliminar(producto)">Eliminar</button>
                         </td>
                     </tr>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {observable, Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {global} from './global';
@@ -15,30 +15,30 @@ export class UserService {
 
   constructor(
     // tslint:disable-next-line:variable-name
-    private _http: HttpClient,
+    private http: HttpClient,
   ) {
     this.url = global.url;
-    this.user = new User('', '', '', '', '');
+    this.user = new User('', '', '', '', '', '');
   }
 
-  login(user, getToken = null): Observable<any>{
-    let json = user;
-
-    if (getToken != null){
+  login(user, getToken = null): Observable<any> {
+    const json = user;
+    if (getToken != null) {
       user.getToken = true;
     }
 
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.post(this.url + 'login' , json, { headers: headers});
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post(this.url + 'login', json, {headers});
 
   }
-getToken(){
 
-}
+  getToken() {
+    return this.token;
+  }
 
-getIdentity(){
-
-}
+  getIdentity() {
+    return this.identity;
+  }
 
 
 }

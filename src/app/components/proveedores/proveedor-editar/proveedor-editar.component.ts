@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {Proveedor} from '../../../models/proveedor';
 import {ProveedorService} from '../../../services/proveedor.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-proveedor-editar',
@@ -44,6 +44,15 @@ export class ProveedorEditarComponent implements OnInit {
       celular: this.proveedor.celular,
       estado: this.proveedor.estado,
     });
+   this.proveedorForm.get('nit').setValidators([Validators.required, Validators.maxLength(20)]);
+   this.proveedorForm.get('nombreContacto').setValidators([Validators.required, Validators.maxLength(20)]);
+   this.proveedorForm.get('tipoDocContacto').setValidators([Validators.required, Validators.maxLength(20)]);
+   this.proveedorForm.get('razonSocial').setValidators([Validators.required, Validators.maxLength(20)]);
+   this.proveedorForm.get('nroDocContacto').setValidators([Validators.required, Validators.pattern(/^[0-9]\d{0,20}$/)]);
+   this.proveedorForm.get('emailContacto').setValidators([Validators.required, Validators.email, Validators.maxLength(20)]);
+   this.proveedorForm.get('direccion').setValidators([Validators.required, Validators.maxLength(45)]);
+   this.proveedorForm.get('telefonoFijo').setValidators(Validators.pattern(/^[1-9]\d{0,20}$/));
+   this.proveedorForm.get('celular').setValidators([Validators.required, Validators.pattern(/^[0-9]\d{0,20}$/)]);
   }
 
 

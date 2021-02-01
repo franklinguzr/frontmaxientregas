@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-header">
-      <h3>Productos</h3>
+      <h3>Proveedores</h3>
     </div>
     <div class="card">
       <div class="card-body">
@@ -12,11 +12,10 @@
         </div>
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-body ">
       <table class="table table-hover">
         <thead>
         <tr>
-          <th>Id</th>
           <th>razon Social</th>
           <th>nit</th>
           <th>nombre Contacto</th>
@@ -27,11 +26,11 @@
           <th>Telefono Fijo</th>
           <th>Celular</th>
           <th>Estado</th>
+          <th>Accion</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let proveedor of proveedores" class="text-center">
-          <td>{{proveedor.idProveedor}}</td>
           <td>{{proveedor.razonSocial}}</td>
           <td>{{proveedor.nit}}</td>
           <td>{{proveedor.nombreContacto}}</td>
@@ -41,10 +40,10 @@
           <td>{{proveedor.direccion}}</td>
           <td>{{proveedor.telefonoFijo}}</td>
           <td>{{proveedor.celular}}</td>
-          <td>{{proveedor.estado}}</td>
+          <td>{{estado(proveedor.estado)}}</td>
           <td>
-            <button class="btn btn-warning" (click)="editar(proveedor)" >Editar</button>
-            <button class="btn btn-danger" style="margin-left: 10px; " (click)="eliminar(proveedor)" >Eliminar </button>
+            <button class="btn btn-warning"  (click)="editar(proveedor)" >Editar</button>
+            <button class="btn btn-danger"  (click)="eliminar(proveedor)" >Eliminar </button>
           </td>
         </tr>
         </tbody>

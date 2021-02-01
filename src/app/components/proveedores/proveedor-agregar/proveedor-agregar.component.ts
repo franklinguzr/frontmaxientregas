@@ -3,7 +3,7 @@ import {Producto} from '../../../models/producto';
 import {Router} from '@angular/router';
 import {Proveedor} from '../../../models/proveedor';
 import {ProveedorService} from '../../../services/proveedor.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-proveedor-agregar',
@@ -14,26 +14,30 @@ export class ProveedorAgregarComponent implements OnInit {
 
     proveedorForm = new FormGroup({
       idProveedor: new FormControl('0'),
-      razonSocial: new FormControl(),
-      nit: new FormControl(),
-      nombreContacto: new FormControl(),
-      tipoDocContacto: new FormControl(),
-      nroDocContacto: new FormControl(),
-      emailContacto: new FormControl(),
-      direccion: new FormControl(),
-      telefonoFijo: new FormControl(),
-      celular: new FormControl(),
-      estado: new FormControl(),
+      razonSocial: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+      nit: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+      nombreContacto: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+      tipoDocContacto: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+      nroDocContacto: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d{0,20}$/), Validators.maxLength(20)]),
+      emailContacto: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(20)]),
+      direccion: new FormControl('', [Validators.required, Validators.maxLength(45)]),
+      telefonoFijo: new FormControl('', Validators.pattern(/^[1-9]\d{0,20}$/)),
+      celular: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d{0,20}$/)]),
+      estado: new FormControl('', [Validators.required, Validators.maxLength(20)]),
   });
-  constructor(private router: Router, private service: ProveedorService ){}
-
+  constructor(private router: Router, private service: ProveedorService ){
+  }
 
 
   guardar(form): void{
-    this.router.navigate(['listarProveedor']);
-    this.service.createProveedor(form).subscribe(data => {
-      alert('Creado con exito');
-    });
+    if (this.proveedorForm.valid) {
+      this.router.navigate(['listarProveedor']);
+      this.service.createProveedor(form).subscribe(data => {
+        alert('Creado con exito');
+      });
+    } else {
+
+    }
   }
   regresar(): void{
     this.router.navigate(['proveedor']);
