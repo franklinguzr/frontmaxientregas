@@ -9,7 +9,7 @@ import {Zona} from '../models/Zona';
 export class ZonaService {
 
   public zonaProv: Zona;
-  private urlZona = '/api/zona/';
+  private urlZona = 'http://carlossan-001-site1.btempurl.com/api/zona/';
 
   constructor(private http: HttpClient) {
   }

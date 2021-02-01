@@ -19,7 +19,7 @@ import {ZonasAgregarComponent} from './components/zonas/zonas-agregar/zonas-agre
 import {ZonasEditarComponent} from './components/zonas/zonas-editar/zonas-editar.component';
 
 const routes: Routes = [
-  {path: 'productos', component: ProductoIndexComponent},
+        {path: 'productos', component: ProductoIndexComponent},
   {path: 'listarProductos', component: ProductoListarComponent},
   {path: 'editarProductos', component: ProductoEditarComponent},
   {path: 'agregarProductos', component: ProductoAgregarComponent},

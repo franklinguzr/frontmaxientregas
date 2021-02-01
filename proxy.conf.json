@@ -1,6 +1,6 @@
 {
   "/api/*":{
-      "target": "http://localhost:44345",
+      "target": "http://carlossan-001-site1.btempurl.com",
     "secure": "false",
     "logLevel": "debug"
   }
