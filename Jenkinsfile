@@ -16,9 +16,7 @@ pipeline {
     stage('install') {
       steps {
         git branch: 'develop', url: 'https://github.com/franklinguzr/frontmaxientregas.git'
-        dir('frontend') {
           sh 'npm install'
-        }
       }
     }
 
