@@ -5,12 +5,6 @@ pipeline {
     nodejs "node"
   }
 
-  parameters {
-    string(name: 'container_name', defaultValue: 'pagina_web', description: 'Nombre del contenedor de docker.')
-    string(name: 'image_name', defaultValue: 'pagina_img', description: 'Nombre de la imagene docker.')
-    string(name: 'tag_image', defaultValue: 'lts', description: 'Tag de la imagen de la página.')
-    string(name: 'container_port', defaultValue: '80', description: 'Puerto que usa el contenedor')
-  }
 
   stages {
     stage('install') {
@@ -31,15 +25,6 @@ pipeline {
     stage('build') {
       steps {
         dir('frontend') {
-          script {
-            try {
-              sh 'docker stop ${container_name}'
-              sh 'docker rm ${container_name}'
-              sh 'docker rmi ${image_name}:${tag_image}'
-            } catch (Exception e) {
-              echo 'Exception occurred: ' + e.toString()
-            }
-          }
           sh 'npm run build'
           sh 'docker build -t ${image_name}:${tag_image} .'
         }
